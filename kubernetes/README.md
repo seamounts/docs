@@ -1,0 +1,22 @@
+# 🚀 Kubernetes 知识库
+
+> Kubernetes 的学习笔记与实践经验
+
+## 📖 简介
+
+本知识库汇集了 Kubernetes 学习和实践过程中的重要知识点，包括核心概念、组件详解、实战案例和最佳实践。旨在为 Kubernetes 的学习和使用提供系统化的参考资料。
+
+## 🎯 学习目标
+
+- 掌握 Kubernetes 核心概念和架构
+- 理解各组件的工作原理和配置方法
+- 积累实际部署和运维经验
+- 学习性能优化和故障排查技巧
+
+## 📚 内容导航
+
+### 🔧 性能优化
+
+- [Kubelet ConfigMap 缓存优化](/kubernetes/content/kubelet-configmap-cache-optimization) - 大规模集群中 Kubelet 缓存策略的优化方案
+
+

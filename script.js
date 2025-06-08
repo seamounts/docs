@@ -1,0 +1,54 @@
+window.$docsify = {
+  // 基本配置
+  name: '技术知识库',
+  repo: '',
+  homepage: 'README.md',
+  
+  // 导航和侧边栏
+  loadNavbar: true,
+  loadSidebar: true,
+  autoHeader: true,
+  subMaxLevel: 0,
+  
+  // TOC 目录配置
+  toc: {
+    tocMaxLevel: 5,
+    target: 'h2, h3, h4, h5, h6',
+    ignoreHeaders: ['<!-- {docsify-ignore} -->', '<!-- {docsify-ignore-all} -->']
+  },
+  
+  // 搜索配置
+  search: {
+    maxAge: 86400000,
+    paths: 'auto',
+    placeholder: '搜索文档...',
+    noData: '没有找到结果',
+    depth: 6
+  },
+  
+  // 代码复制
+  copyCode: {
+    buttonText: '复制',
+    errorText: '复制失败',
+    successText: '已复制'
+  },
+  
+  // 分页
+  pagination: {
+    previousText: '上一页',
+    nextText: '下一页',
+    crossChapter: true
+  },
+  
+  // 主题配置
+  themeable: {
+    readyTransition: true,
+    responsiveTables: true
+  },
+  
+  // 其他配置
+  executeScript: true,
+  noEmoji: false,
+  mergeNavbar: true,
+  routerMode: 'hash'
+}
