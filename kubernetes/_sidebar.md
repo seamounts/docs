@@ -6,7 +6,8 @@
   * [📖 知识库首页](/kubernetes/)
   
 * 🔧 **性能优化**
-  * [Kubelet ConfigMap 缓存优化](/kubernetes/content/kubelet-configmap-cache-optimization)
+  * [Kubelet ConfigMap 缓存优化](/kubernetes/content/KubeletConfigMap缓存优化)
+  * [APIServer 限流优化](kubernetes/content/APIServer限流优化)
   
 * 📋 **计划中的内容**
   * 基础概念

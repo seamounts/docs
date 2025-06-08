@@ -5,7 +5,7 @@ window.$docsify = {
   homepage: 'README.md',
   
   // 导航和侧边栏
-  loadNavbar: true,
+  // loadNavbar: true,
   loadSidebar: true,
   autoHeader: true,
   subMaxLevel: 0,
@@ -13,7 +13,7 @@ window.$docsify = {
   // TOC 目录配置
   toc: {
     tocMaxLevel: 5,
-    target: 'h2, h3, h4, h5, h6',
+    target: 'h2, h3, h4, h5',
     ignoreHeaders: ['<!-- {docsify-ignore} -->', '<!-- {docsify-ignore-all} -->']
   },
   
