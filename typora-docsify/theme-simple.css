@@ -1,0 +1,522 @@
+/* Markdown Section Styles Only */
+
+/* Basic markdown section layout */
+.markdown-section {
+  /* max-width: 65em; */
+  padding-left: 2em;
+  padding-right: 2em;
+  padding: env(safe-area-inset-top) calc(2em + env(safe-area-inset-left) + env(safe-area-inset-right) + 1vw) env(safe-area-inset-bottom);
+}
+
+.markdown-section *,
+.markdown-section *::before,
+.markdown-section *::after {
+  box-sizing: border-box;
+}
+
+/* Headings */
+.markdown-section h1,
+.markdown-section h1 *,
+.markdown-section h2,
+.markdown-section h2 *,
+.markdown-section h3,
+.markdown-section h3 *,
+.markdown-section h4,
+.markdown-section h4 *,
+.markdown-section h5,
+.markdown-section h5 *,
+.markdown-section h6,
+.markdown-section h6 * {
+  color: var(--theme-color);
+  font-family: var(--sans);
+  font-weight: normal;
+  padding: 0 !important;
+  margin: 1rem 0 0 !important;
+  line-height: 1.25 !important;
+  text-wrap: balance;
+}
+
+.markdown-section h1::before,
+.markdown-section h1 *::before,
+.markdown-section h2::before,
+.markdown-section h2 *::before,
+.markdown-section h3::before,
+.markdown-section h3 *::before,
+.markdown-section h4::before,
+.markdown-section h4 *::before,
+.markdown-section h5::before,
+.markdown-section h5 *::before,
+.markdown-section h6::before,
+.markdown-section h6 *::before {
+  font: 400 0.8em var(--sans);
+  color: inherit;
+  margin-right: 0.5rem;
+  border: none;
+  position: relative;
+  left: unset;
+  top: unset;
+  float: none;
+  padding: 0;
+  vertical-align: baseline;
+  opacity: 1 !important;
+}
+
+.markdown-section h1:first-child {
+  padding-top: 5rem !important;
+}
+
+.markdown-section h1 * {
+  font-size: 2rem;
+  color: var(--h1-color);
+}
+
+.markdown-section h2 {
+  border: none;
+  border-top: 1px solid var(--theme-color);
+  padding-top: 1.5rem !important;
+  margin-top: 2rem !important;
+  display: block;
+}
+
+.markdown-section h2,
+.markdown-section h2 * {
+  font-size: 1.75rem;
+  color: var(--h2-color);
+}
+
+.markdown-section h3,
+.markdown-section h3 * {
+  font-size: 1.5rem;
+  color: var(--h3-color);
+}
+
+.markdown-section h4,
+.markdown-section h4 * {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--h4-color);
+}
+
+.markdown-section h5,
+.markdown-section h5 * {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--h5-color);
+}
+
+.markdown-section h6,
+.markdown-section h6 * {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--h6-color);
+}
+
+/* Heading counters */
+.markdown-section h1 {
+  counter-reset: h2;
+}
+
+.markdown-section h2 {
+  counter-reset: h3;
+}
+
+.markdown-section h3 {
+  counter-reset: h4;
+}
+
+.markdown-section h4 {
+  counter-reset: h5;
+}
+
+.markdown-section h5 {
+  counter-reset: h6;
+}
+
+.markdown-section h2::before {
+  counter-increment: h2;
+  content: counter(h2) ".";
+}
+
+.markdown-section h3::before {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3);
+}
+
+.markdown-section h4::before {
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4);
+}
+
+.markdown-section h5::before {
+  counter-increment: h5;
+  content: none;
+}
+
+.markdown-section h6::before {
+  counter-increment: h6;
+  content: none;
+}
+
+/* Basic elements */
+.markdown-section p,
+.markdown-section blockquote,
+.markdown-section ul,
+.markdown-section ol,
+.markdown-section pre.md-fences,
+.markdown-section pre[data-lang],
+.markdown-section table:not(.md-grid-board) {
+  margin: 1rem 0;
+}
+
+.markdown-section hr,
+.markdown-section .md-hr {
+  margin: 2rem 0;
+  height: 0;
+  border: none;
+  border-bottom: 1px solid #8884;
+}
+
+.markdown-section hr + h2,
+.markdown-section .md-hr + h2 {
+  margin-top: -2rem !important;
+}
+
+/* Text formatting */
+.markdown-section del,
+.markdown-section q,
+.markdown-section mark {
+  padding: 0.1em var(--inline-block-padding);
+  margin: 0.5em var(--inline-block-margin);
+  border-radius: var(--inline-border-radius);
+  background: var(--color-inline-block-bg);
+}
+
+.markdown-section strong,
+.markdown-section b,
+.markdown-section em {
+  margin: 0 var(--inline-block-margin);
+}
+
+.markdown-section u {
+  margin: 0 var(--inline-block-margin);
+}
+
+.markdown-section u strong,
+.markdown-section u b,
+.markdown-section u em {
+  margin: 0;
+}
+
+/* Links */
+.markdown-section p a,
+.markdown-section table a,
+.markdown-section li a {
+  padding: 0.1em var(--inline-block-padding);
+  margin: 0.5em var(--inline-block-margin);
+  border-radius: var(--inline-border-radius);
+  background: var(--color-inline-block-bg);
+  color: var(--color-link);
+  padding: 0;
+  background: transparent;
+  transition: 1s;
+}
+
+.markdown-section a:hover {
+  color: var(--color-important);
+  text-decoration-color: var(--color-underline);
+  background: var(--color-highlight);
+  transition: 0.3s;
+}
+
+.markdown-section h1 a,
+.markdown-section a.anchor {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.markdown-section h1 a:hover,
+.markdown-section a.anchor:hover {
+  background: var(--color-highlight);
+}
+
+/* Text styles */
+.markdown-section strong,
+.markdown-section b {
+  font-weight: var(--font-weight-bold);
+}
+
+.markdown-section del {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.markdown-section u {
+  text-decoration-color: var(--color-underline);
+}
+
+.markdown-section mark {
+  color: var(--color-mark-text);
+  background: var(--color-mark-bg);
+}
+
+.markdown-section mark strong {
+  color: var(--color-important);
+}
+
+.markdown-section mark u {
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--color-underline);
+}
+
+.markdown-section em {
+  color: var(--color-em);
+}
+
+.markdown-section q {
+  font-size: 0.9em;
+  opacity: 0.5;
+  line-height: var(--line-height);
+  transition: opacity 1s;
+}
+
+.markdown-section q::before,
+.markdown-section q::after {
+  content: "";
+}
+
+.markdown-section q:hover {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* Code */
+.markdown-section code,
+.markdown-section kbd,
+.markdown-section code:not([class*="lang-"]):not([class*="language-"]) {
+  color: var(--color-inline-code);
+  background: var(--color-light);
+  border: var(--code-border);
+  border-radius: var(--inline-border-radius);
+  padding: 0.1em var(--inline-block-padding);
+  margin: 0 var(--inline-block-margin);
+  font: bold 0.9em var(--monospace);
+  white-space: pre-wrap;
+  min-width: unset;
+}
+
+.markdown-section pre[data-lang] {
+  border-radius: 0;
+  background: none;
+}
+
+.markdown-section pre[data-lang] code {
+  margin: 0;
+  background: var(--code-block-bg-color);
+  color: #fff;
+  border: var(--code-border);
+  border-radius: var(--block-border-radius);
+  padding: var(--code-block-padding-v) var(--code-block-padding-h);
+  word-break: break-word;
+  white-space: break-spaces;
+}
+
+.markdown-section pre[data-lang]::after {
+  color: #fff;
+  top: 0;
+  right: 1em;
+  background: #fff2;
+  padding: 0.2em 0.8em;
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+.markdown-section pre.md-fences {
+  background: var(--code-block-bg-color);
+  color: #fff;
+  border: var(--code-border);
+  border-radius: var(--block-border-radius);
+  padding: var(--code-block-padding-v) var(--code-block-padding-h);
+  word-break: break-word;
+  white-space: break-spaces;
+}
+
+.markdown-section kbd {
+  box-shadow: none;
+}
+
+.markdown-section kbd + kbd {
+  margin-left: var(--inline-block-margin);
+}
+
+/* Blockquotes */
+.markdown-section blockquote {
+  --block-gap: 0.75rem;
+  padding: var(--block-gap) 0.75rem;
+  border-left: 4px solid var(--color-border);
+  background: var(--color-light);
+  color: var(--text-color);
+  border-radius: 0 var(--block-border-radius) var(--block-border-radius) 0;
+  transition: 1s;
+}
+
+.markdown-section blockquote p {
+  font: 0.9em/1.5 var(--sans);
+  margin: var(--block-gap) 0;
+}
+
+.markdown-section blockquote p:first-child {
+  margin-top: 0;
+}
+
+.markdown-section blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-section blockquote:hover {
+  transition: 0.2s;
+  border-left: 4px solid var(--theme-color);
+  background: var(--color-light);
+  color: var(--text-color);
+}
+
+/* Images */
+.markdown-section .md-image,
+.markdown-section img {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: var(--block-border-radius);
+  box-shadow: 0 0 2px #0000;
+  transition: all 0.3s !important;
+}
+
+.markdown-section .md-image:hover,
+.markdown-section img:hover {
+  box-shadow: 0 0 2px #0004;
+}
+
+/* Lists */
+.markdown-section ul,
+.markdown-section ol {
+  margin: 0.5em 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-section ul li,
+.markdown-section ol li {
+  margin: 0.5em 0;
+}
+
+.markdown-section ul ul,
+.markdown-section ol ul,
+.markdown-section ul ol,
+.markdown-section ol ol {
+  margin: 0.3em 0;
+}
+
+.markdown-section ul ul li,
+.markdown-section ol ul li,
+.markdown-section ul ol li,
+.markdown-section ol ol li {
+  margin: 0.3em 0;
+}
+
+.markdown-section li p {
+  margin: 0;
+}
+
+.markdown-section ol li::marker {
+  font-size: 0.9em;
+}
+
+.markdown-section .task-list-item {
+  margin-left: 0 !important;
+  position: relative;
+}
+
+.markdown-section .task-list-item input[type="checkbox"] {
+  width: 1.5em !important;
+  margin: 0;
+  position: absolute;
+  left: -1.5em;
+  top: 0.5em;
+}
+
+/* Tables */
+.markdown-section table:not(.md-grid-board),
+.markdown-section .md-table {
+  display: table;
+  width: auto;
+  border-radius: var(--block-border-radius);
+  overflow: hidden;
+  font: 0.9rem/1.25 var(--monospace);
+  border-collapse: separate;
+  border: 1px solid var(--color-border);
+}
+
+.markdown-section table:not(.md-grid-board) th,
+.markdown-section .md-table th,
+.markdown-section table:not(.md-grid-board) td,
+.markdown-section .md-table td {
+  padding: 0.5em clamp(0.5em, 1vw, 2em);
+  vertical-align: top;
+  border: none;
+}
+
+.markdown-section table:not(.md-grid-board) th:not(:last-child),
+.markdown-section .md-table th:not(:last-child),
+.markdown-section table:not(.md-grid-board) td:not(:last-child),
+.markdown-section .md-table td:not(:last-child) {
+  border-right: 1px dashed #8888;
+}
+
+.markdown-section table:not(.md-grid-board) tr:last-child td,
+.markdown-section .md-table tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-section table:not(.md-grid-board) th,
+.markdown-section .md-table th,
+.markdown-section table:not(.md-grid-board) td,
+.markdown-section .md-table td {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.markdown-section table:not(.md-grid-board) th,
+.markdown-section .md-table th {
+  background: var(--color-light);
+}
+
+.markdown-section table:not(.md-grid-board) tbody tr:nth-child(even),
+.markdown-section .md-table tbody tr:nth-child(even) {
+  background: #8881;
+}
+
+/* Abbreviations */
+.markdown-section abbr {
+  text-decoration: underline;
+  text-decoration-color: var(--theme-color);
+}
+
+/* Mermaid diagrams */
+.markdown-section .md-fences[lang="mermaid"]:not(.md-focus),
+.markdown-section .md-diagram-panel,
+.markdown-section .mermaid {
+  background: #fff;
+}
+
+.markdown-section .md-fences[lang="mermaid"]:not(.md-focus) *,
+.markdown-section .md-diagram-panel *,
+.markdown-section .mermaid * {
+  font-family: var(--sans) !important;
+}
+
+.markdown-section .mermaid {
+  display: flex;
+  justify-content: center;
+}
+
+.markdown-section .mermaid .messageText {
+  stroke: none !important;
+}
