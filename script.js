@@ -50,5 +50,29 @@ window.$docsify = {
   executeScript: true,
   noEmoji: false,
   mergeNavbar: true,
-  routerMode: 'hash'
+  routerMode: 'hash',
+
+  // markdown mermaid 配置
+  markdown: {
+    renderer: {
+      code: function(code, lang) {
+        if (lang === "mermaid") {
+          return '<div class="mermaid">' + code + '</div>';
+        }
+        return this.origin.code.apply(this, arguments);
+      }
+    }
+  },
+  
+  // 添加 Mermaid 插件配置
+  plugins: [
+    function(hook, vm) {
+      hook.ready(function() {
+        mermaid.initialize({ startOnLoad: false });
+      });
+      hook.doneEach(function() {
+        mermaid.init(undefined, '.mermaid');
+      });
+    }
+  ]
 }
